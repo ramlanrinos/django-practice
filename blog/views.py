@@ -25,7 +25,12 @@ def index(request):
     return render(request, "index.html",  {'blog_title': blog_title, 'posts': posts})
 
 def detials(request, post_id):
-    post = next((item for item in posts if item.id == int(post_id)), None)
+    # getting static data
+    # post = next((item for item in posts if item["id"] == int(post_id)), None)
+
+    # getting data from model by id
+    post = Post.objects.get(pk=post_id)
+
     # logger = logging.getLogger("TESTING")
     # logger.debug(f"post variable is {post}")
     return render(request, "detail.html", {"post": post})
