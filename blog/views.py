@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.urls import reverse
 import logging
 from .models import Post
@@ -28,8 +28,12 @@ def detials(request, post_id):
     # getting static data
     # post = next((item for item in posts if item["id"] == int(post_id)), None)
 
-    # getting data from model by id
-    post = Post.objects.get(pk=post_id)
+    try:
+        # getting data from model by id
+        post = Post.objects.get(pk=post_id)
+
+    except Post.DoesNotExist:
+        raise Http404("Post does not exist!")
 
     # logger = logging.getLogger("TESTING")
     # logger.debug(f"post variable is {post}")
