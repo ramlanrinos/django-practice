@@ -26,8 +26,8 @@ def index(request):
 
 def detials(request, post_id):
     post = next((item for item in posts if item.id == int(post_id)), None)
-    logger = logging.getLogger("TESTING")
-    logger.debug(f"post variable is {post}")
+    # logger = logging.getLogger("TESTING")
+    # logger.debug(f"post variable is {post}")
     return render(request, "detail.html", {"post": post})
 
 def old_url_redirect(request):
