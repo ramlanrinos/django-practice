@@ -53,26 +53,26 @@ class Command(BaseCommand):
         ]
 
         img_urls = [
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300",
-            "https://picsum.photos/seed/picsum/200/300"   
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400",
+            "https://picsum.photos/seed/picsum/800/400"   
         ]
 
         for title, content, img_url in zip(titles, contents, img_urls):
