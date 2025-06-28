@@ -31,7 +31,7 @@
                                         <p class="card-text">{{post.content | truncatechars:50}}</p>
                                         <div class="d-flex justify-content-between">
                                                 <a href="{%url 'blog:details' slug=post.slug%}">Read More</a>
-                                            <a class="text-decoration-none text-dark fw-bold" href="#">Sports</a>
+                                            <a class="text-decoration-none text-dark fw-bold" href="#">{{post.category}}</a>
                                         </div>
                                     </div>
                                 </div>
