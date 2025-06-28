@@ -24,13 +24,13 @@ def index(request):
     blog_title = "Latest Posts"
     return render(request, "index.html",  {'blog_title': blog_title, 'posts': posts})
 
-def detials(request, post_id):
+def detials(request, slug):
     # getting static data
     # post = next((item for item in posts if item["id"] == int(post_id)), None)
 
     try:
         # getting data from model by id
-        post = Post.objects.get(pk=post_id)
+        post = Post.objects.get(slug=slug)
 
     except Post.DoesNotExist:
         raise Http404("Post does not exist!")
