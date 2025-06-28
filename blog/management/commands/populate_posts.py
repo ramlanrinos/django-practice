@@ -6,6 +6,8 @@ class Command(BaseCommand):
     help = "This commands inserts posts data"
 
     def handle(self, *args: Any, **options: Any):
+        Post.objects.all().delete()
+
         titles = [
             "Quantum Glow Serum for Radiant Skin",
             "HyperSpeed Wireless Charging Pad",
