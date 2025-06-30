@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404
 from django.urls import reverse
 import logging
 from .models import Post
+from django.core.paginator import Paginator
 
 # static demo data
 # posts = [
@@ -14,15 +15,19 @@ from .models import Post
 #     {"id": 6, "title": "Post 6",  "content": "Content of Post 6"}
 # ]
 
-
-posts = Post.objects.all()
 # logger = logging.getLogger("TESTING")
 # logger.debug(f"post variable is {posts}")
 
 # Create your views here.
 def index(request):
     blog_title = "Latest Posts"
-    return render(request, "index.html",  {'blog_title': blog_title, 'posts': posts})
+
+    all_posts = Post.objects.all()
+    paginator = Paginator(all_posts, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "index.html",  {'blog_title': blog_title, 'page_obj': page_obj})
 
 def detials(request, slug):
     # getting static data
