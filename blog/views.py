@@ -60,4 +60,5 @@ def contact_view(request):
             logger.debug(f"POST data is {form.cleaned_data['name']}, {form.cleaned_data['email']}, {form.cleaned_data['message']}")
         else:
             logger.debug("form validation failure")
+            return render(request, "contact.html", {"form": form})
     return render(request, "contact.html")
