@@ -55,10 +55,13 @@ def new_url(request):
 def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
         logger = logging.getLogger("TESTING")
         if form.is_valid():
             logger.debug(f"POST data is {form.cleaned_data['name']}, {form.cleaned_data['email']}, {form.cleaned_data['message']}")
         else:
             logger.debug("form validation failure")
-            return render(request, "contact.html", {"form": form})
+            return render(request, "contact.html", {"form": form, "name": name, "email": email, "message": message})
     return render(request, "contact.html")
