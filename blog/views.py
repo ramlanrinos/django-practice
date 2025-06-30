@@ -4,6 +4,7 @@ from django.urls import reverse
 import logging
 from .models import Post
 from django.core.paginator import Paginator
+from .forms import ContactForm
 
 # static demo data
 # posts = [
@@ -52,4 +53,11 @@ def new_url(request):
     return HttpResponse("This is new URL")
 
 def contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        logger = logging.getLogger("TESTING")
+        if form.is_valid():
+            logger.debug(f"POST data is {form.cleaned_data['name']}, {form.cleaned_data['email']}, {form.cleaned_data['message']}")
+        else:
+            logger.debug("form validation failure")
     return render(request, "contact.html")
