@@ -50,3 +50,6 @@ def old_url_redirect(request):
 
 def new_url(request):
     return HttpResponse("This is new URL")
+
+def contact_view(request):
+    return render(request, "contact.html")
