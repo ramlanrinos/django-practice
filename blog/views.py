@@ -58,13 +58,13 @@ def contact_view(request):
         name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message")
-        logger = logging.getLogger("TESTING")
+        # logger = logging.getLogger("TESTING")
         if form.is_valid():
-            logger.debug(f"POST data is {form.cleaned_data['name']}, {form.cleaned_data['email']}, {form.cleaned_data['message']}")
+            # logger.debug(f"POST data is {form.cleaned_data['name']}, {form.cleaned_data['email']}, {form.cleaned_data['message']}")
             # send email or save in database
             success_msg = "Your email has been sent!"
             return render(request, "contact.html", {"form": form, "success_msg": success_msg})
         else:
-            logger.debug("form validation failure")
+            # logger.debug("form validation failure")
             return render(request, "contact.html", {"form": form, "name": name, "email": email, "message": message})
     return render(request, "contact.html")
